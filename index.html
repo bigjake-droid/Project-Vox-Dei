@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Project Vox Dei</title>
+
+  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#05070b" />
+</head>
+
+<body>
+
+  <main id="app">
+
+    <section id="dashboard" class="screen active">
+      <div class="hero">
+        <div class="sigil">⚔</div>
+        <h1>PROJECT VINDEX</h1>
+        <p>VOX DEI</p>
+      </div>
+
+      <div class="card-grid">
+
+        <button class="dash-card" onclick="openScreen('guidebook')">
+          <div class="emoji">📖</div>
+          <h2>Pro Se<br>Guidebook</h2>
+          <p>Doctrine. Discipline. Record control.</p>
+          <span>→</span>
+        </button>
+
+        <button class="dash-card" onclick="openScreen('evidence')">
+          <div class="emoji">🔒</div>
+          <h2>Evidence<br>Organizer</h2>
+          <p>Index proof. Tag doctrine. Build leverage.</p>
+          <span>→</span>
+        </button>
+
+        <button class="dash-card" onclick="openScreen('timeline')">
+          <div class="emoji">⏳</div>
+          <h2>Case<br>Timeline</h2>
+          <p>Every event matters.</p>
+          <span>→</span>
+        </button>
+
+        <button class="dash-card" onclick="openScreen('export')">
+          <div class="emoji">📜</div>
+          <h2>Export<br>Dossier</h2>
+          <p>Build. Export. Defend.</p>
+          <span>→</span>
+        </button>
+
+      </div>
+    </section>
+
+    <section id="guidebook" class="screen page">
+      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
+      <h1>Pro Se Guidebook</h1>
+
+      <div class="panel">
+        <h2>Rule One</h2>
+        <p>Do not argue from memory. Argue from records.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Rule Two</h2>
+        <p>Timeline first. Argument second. Emotion last.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Rule Three</h2>
+        <p>Every exhibit must explain what it proves and why it matters.</p>
+      </div>
+    </section>
+
+    <section id="evidence" class="screen page">
+      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
+      <h1>Evidence Organizer</h1>
+
+      <div class="form-box">
+        <input id="evidenceTitle" type="text" placeholder="Evidence title" />
+        <input id="evidenceTag" type="text" placeholder="Tag / issue / element" />
+        <textarea id="evidenceNotes" placeholder="What does this prove?"></textarea>
+        <button onclick="addEvidence()">Add Evidence</button>
+      </div>
+
+      <div id="evidenceList" class="list"></div>
+    </section>
+
+    <section id="timeline" class="screen page">
+      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
+      <h1>Case Timeline</h1>
+
+      <div class="form-box">
+        <input id="eventDate" type="text" placeholder="Date / time" />
+        <input id="eventTitle" type="text" placeholder="Event title" />
+        <textarea id="eventNotes" placeholder="Event details"></textarea>
+        <button onclick="addTimelineEvent()">Add Event</button>
+      </div>
+
+      <div id="timelineList" class="list"></div>
+    </section>
+
+    <section id="export" class="screen page">
+      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
+      <h1>Export Dossier</h1>
+
+      <button onclick="generateDossier()">Generate Dossier</button>
+      <textarea id="dossierOutput" readonly placeholder="Generated dossier will appear here..."></textarea>
+    </section>
+
+  </main>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
