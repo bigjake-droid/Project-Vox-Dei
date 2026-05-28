@@ -1,42 +1,33 @@
-/* --- Display Engine States --- */
+/* ==========================================================================
+   PROJECT VINDEX: SECURE STYLESHEET LAYER (HARDENED MOBILITY MATRIX)
+   ========================================================================== */
+
+/* --- Core Visibility Logic Blocks --- */
 .splash-stage {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    text-align: center;
 }
-
-.stage-centered {
-    justify-content: center;
-    position: relative;
-    height: 100%;
-    min-height: 320px;
-}
-
 .hidden-view {
     display: none !important;
 }
 
-/* --- Base Workspace Configuration --- */
+/* --- Clean Universal Layout Matrix --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
-
 body {
     background-color: #0c0c0e;
     color: #e4e4e7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* --- Splash Screen Structural Overlay --- */
+/* --- Stage 1: Absolute Center Splash Core & Blue Backlight Aura --- */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -44,38 +35,40 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #0c0c0e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 99999;
 }
-
 .splash-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    max-width: 380px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 360px;
+    padding: 20px;
+    text-align: center;
 }
-
-/* --- High-Intensity Blue Backlight Aura & Scale Target --- */
+.stage-centered {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
 .backlight-aura-source {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 240px;
     height: 240px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 85, 255, 0.65) 0%, rgba(0, 85, 255, 0.15) 60%, rgba(0, 0, 0, 0) 75%);
+    background: radial-gradient(circle, rgba(0, 85, 255, 0.6) 0%, rgba(0, 85, 255, 0.15) 60%, rgba(0, 0, 0, 0) 75%);
     filter: blur(15px);
     z-index: 1;
-    pointer-events: none;
 }
-
 .crest-vector-container {
     position: relative;
     width: 260px;
     height: 260px;
+    margin: 0 auto;
     border-radius: 50%;
     border: 2px solid rgba(0, 85, 255, 0.4);
     background-image: url('icon-512.jpg');
@@ -84,82 +77,160 @@ body {
     background-color: #0c0c0e;
     z-index: 2;
     transform-origin: center center;
-}
-
-.zoom-animation {
     animation: centerExplosionZoom 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 @keyframes centerExplosionZoom {
     0% { transform: scale(0.0); opacity: 0; box-shadow: 0 0 20px rgba(0, 85, 255, 0.2); }
     12% { opacity: 1; }
-    75% { transform: scale(1.06); box-shadow: 0 0 60px rgba(0, 85, 255, 0.55); }
-    100% { transform: scale(1.0); opacity: 1; box-shadow: 0 0 40px rgba(0, 85, 255, 0.4); }
+    75% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 85, 255, 0.5); }
+    100% { transform: scale(1.0); opacity: 1; box-shadow: 0 0 35px rgba(0, 85, 255, 0.35); }
 }
-
 .splash-loading-text {
     color: #0055ff;
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-top: 32px;
-    text-align: center;
-    z-index: 2;
+    margin-top: 30px;
     text-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
 }
 
-/* --- Initialize Screen Parameters --- */
+/* --- Stage 2: System Initializing Typography & Action Elements --- */
 .start-title {
     color: #ff3333;
-    font-size: 2.2rem;
+    font-size: 32px;
     font-weight: 800;
     letter-spacing: 1px;
     margin-bottom: 6px;
-    text-align: center;
 }
-
 .start-status {
     color: #71717a;
-    font-size: 0.7rem;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 24px;
 }
-
 .system-manifest-box {
     width: 100%;
     background-color: #121214;
     border: 1px solid #27272a;
     border-radius: 6px;
     padding: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
-
 .manifest-line {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem;
+    font-size: 11px;
     color: #a1a1aa;
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: left;
 }
-
 .btn-start-engage {
     width: 100%;
     background-color: #ff3333;
     border: none;
     color: #ffffff;
     padding: 16px;
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.5px;
     cursor: pointer;
     border-radius: 6px;
 }
 
-/* --- Pathway Split Selection Matrix --- */
+/* --- Stage 3: Side-by-Side Pathway Split Configuration --- */
 .pathway-grid {
-    display: flex;
-    gap: 12px;
     width: 100%;
+    display: block;
+    white-space: nowrap;
+}
+.btn-pathway {
+    display: inline-block;
+    width: 48%;
+    margin: 0 1%;
+    background-color: #121214;
+    border: 2px solid #ff3333;
+    color: #ffffff;
+    padding: 20px 4px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 6px;
+    white-space: normal;
+}
+
+/* --- Main Workspace Frame (Hardened Mobile Realignment) --- */
+.workspace-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 16px;
+}
+.terminal-container {
+    width: 100%;
+    max-width: 360px;
+    margin: 40px auto 0 auto;
+    padding: 20px;
+    background-color: #121214;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+}
+.terminal-header {
+    border-bottom: 1px solid #27272a;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+.brand-block {
+    width: 100%;
+    display: block;
+}
+.header-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+.title-meta {
+    display: block;
+    text-align: left;
+}
+.title-meta h1 {
+    font-size: 20px;
+    color: #ff3333;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+.sub-indicator {
+    font-size: 11px;
+    color: #71717a;
+    font-family: 'Courier New', Courier, monospace;
+}
+.log-row {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    width: 100%;
+    text-align: left;
+}
+.log-id {
+    color: #71717a;
+    display: block;
+    margin-top: 8px;
+}
+.log-target {
+    color: #e4e4e7;
+    display: block;
+}
+.log-outcome {
+    color: #ff3333;
+    font-weight: 700;
+    display: block;
+    margin-top: 8px;
+    border-top: 1px dashed #27272a;
+    padding-top: 8px;
 }
