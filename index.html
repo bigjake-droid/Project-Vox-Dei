@@ -2,39 +2,58 @@
 <html>
 
 <head>
-  <title>CaseForge</title>
+
+  <title>PROJECT-VOX-DEI</title>
+
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div id="splashScreen" class="screen">
+  <!-- SPLASH SCREEN -->
 
-  <img src="icon-512.jpg" class="logo">
+  <div id="splashScreen" class="screen">
 
-  <h1>CASEFORGE</h1>
+    <img src="icon-512.jpg"
+         class="logo">
 
-</div>
-
-<div id="initiateScreen" class="screen hidden">
-
-  <div class="card"
-       onclick="enterApp('Individual')">
-
-    Individual
+    <h1 class="mainTitle">
+      PROJECT-VOX-DEI
+    </h1>
 
   </div>
 
-  <div class="card"
-       onclick="enterApp('Corporation')">
+  <!-- INITIATE SCREEN -->
 
-    Corporation
+  <div id="initiateScreen"
+       class="screen hidden">
+
+    <div class="menuBox">
+
+      <h1 class="initiateText">
+        INITIATE
+      </h1>
+
+      <div class="card"
+           onclick="enterApp('Individual')">
+
+        <h2>Individual</h2>
+
+      </div>
+
+      <div class="card"
+           onclick="enterApp('Corporation')">
+
+        <h2>Corporation</h2>
+
+      </div>
+
+    </div>
 
   </div>
 
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
