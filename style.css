@@ -1,26 +1,33 @@
-/* --- Display Visibility Rules --- */
+/* ==========================================================================
+   PROJECT VINDEX: HARDENED STANDALONE STYLE SHEET
+   ========================================================================== */
+
+/* --- Core Core Structural Rules --- */
 .splash-stage {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .stage-centered {
     position: relative;
     justify-content: center;
-    min-height: 300px;
+    min-height: 320px;
 }
+
 .hidden-view {
     display: none !important;
 }
 
-/* --- Core Configuration --- */
+/* --- Clean Global Configuration Reset --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
 body {
     background-color: #0c0c0e;
     color: #e4e4e7;
@@ -32,7 +39,7 @@ body {
     align-items: center;
 }
 
-/* --- Stage 1: Absolute Splash Frame & Blue Aura --- */
+/* --- Master Interface Overlay Frame --- */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -45,6 +52,7 @@ body {
     align-items: center;
     z-index: 99999;
 }
+
 .splash-content {
     width: 100%;
     max-width: 360px;
@@ -52,7 +60,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
+
+/* --- Stage 1: Volumetric Deep Blue Backlight Aura & Centered Vector --- */
 .backlight-aura-source {
     position: absolute;
     width: 220px;
@@ -61,7 +72,9 @@ body {
     background: radial-gradient(circle, rgba(0, 85, 255, 0.6) 0%, rgba(0, 85, 255, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
     filter: blur(10px);
     z-index: 1;
+    pointer-events: none;
 }
+
 .crest-vector-container {
     position: relative;
     width: 260px;
@@ -76,21 +89,33 @@ body {
     transform-origin: center center;
     animation: centerExplosionZoom 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
 @keyframes centerExplosionZoom {
-    0% { transform: scale(0.0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: scale(1.0); opacity: 1; }
+    0% {
+        transform: scale(0.0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 1;
+    }
 }
+
 .splash-loading-text {
     color: #0055ff;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-top: 30px;
-    text-shadow: 0 0 6px rgba(0, 85, 255, 0.3);
+    margin-top: 32px;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
 }
 
-/* --- Stage 2: System Initialization Screen --- */
+/* --- Stage 2: System Initializing Typography --- */
 .start-title {
     color: #ff3333;
     font-size: 28px;
@@ -99,6 +124,7 @@ body {
     text-align: center;
     margin-bottom: 6px;
 }
+
 .start-status {
     color: #71717a;
     font-size: 11px;
@@ -106,6 +132,7 @@ body {
     text-align: center;
     margin-bottom: 24px;
 }
+
 .system-manifest-box {
     width: 100%;
     background-color: #121214;
@@ -114,6 +141,7 @@ body {
     padding: 16px;
     margin-bottom: 24px;
 }
+
 .manifest-line {
     font-family: 'Courier New', Courier, monospace;
     font-size: 11px;
@@ -121,6 +149,7 @@ body {
     line-height: 1.8;
     text-align: left;
 }
+
 .btn-start-engage {
     width: 100%;
     background-color: #ff3333;
@@ -131,20 +160,22 @@ body {
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
+    text-align: center;
 }
 
-/* --- Stage 3: Fixed Flexbox Side-by-Side Pathway Grid --- */
+/* --- Stage 3: Flexible Side-by-Side Pathway Grid Layout --- */
 .pathway-grid {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
 }
+
 .btn-pathway {
     flex: 1;
     background-color: #121214;
     border: 2px solid #ff3333;
     color: #ffffff;
-    padding: 20px 4px;
+    padding: 22px 4px;
     font-size: 11px;
     font-weight: 800;
     text-align: center;
@@ -152,12 +183,13 @@ body {
     cursor: pointer;
 }
 
-/* --- Main Workspace Frame (Hardened Containment) --- */
+/* --- Main Workspace Dashboard Containment --- */
 .workspace-wrapper {
     padding: 16px;
     width: 100%;
     max-width: 380px;
 }
+
 .terminal-container {
     width: 100%;
     padding: 20px;
@@ -165,17 +197,20 @@ body {
     border: 1px solid #27272a;
     border-radius: 8px;
 }
+
 .terminal-header {
     border-bottom: 1px solid #27272a;
     padding-bottom: 12px;
     margin-bottom: 16px;
 }
+
 .brand-block {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
 .header-logo {
     width: 100%;
     height: auto;
@@ -184,17 +219,20 @@ body {
     border-radius: 6px;
     margin-bottom: 16px;
 }
+
 .title-meta h1 {
     font-size: 22px;
     color: #ff3333;
     font-weight: 800;
     margin-bottom: 4px;
 }
+
 .sub-indicator {
     font-size: 11px;
     color: #71717a;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .log-row {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
@@ -204,13 +242,16 @@ body {
     flex-direction: column;
     text-align: left;
 }
+
 .log-id {
     color: #71717a;
     margin-top: 4px;
 }
+
 .log-target {
     color: #e4e4e7;
 }
+
 .log-outcome {
     color: #ff3333;
     font-weight: 700;
