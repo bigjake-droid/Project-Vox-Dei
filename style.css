@@ -1,124 +1,259 @@
-body{
-
-margin:0;
-background:#020617;
-overflow:hidden;
-font-family:Arial;
-color:white;
-
+/* --- Core Structural Visibility Rules --- */
+.splash-stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* SCREENS */
-
-#splashScreen,
-#initiateScreen{
-
-position:absolute;
-
-width:100vw;
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
+.stage-centered {
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    min-height: 280px;
 }
 
-/* HIDDEN */
-
-.hidden{
-
-opacity:0;
-pointer-events:none;
-
+.hidden-view {
+    display: none !important;
 }
 
-/* SPLASH */
-
-.logo{
-
-width:220px;
-
-opacity:0;
-
-animation:fadeLogo 5s forwards;
-
+/* --- Clean Global Configuration --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-.mainTitle{
-
-margin-top:25px;
-
-font-size:2rem;
-
-letter-spacing:8px;
-
-opacity:0;
-
-animation:fadeLogo 5s forwards;
-
+body {
+    background-color: #0c0c0e;
+    color: #e4e4e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
 }
 
-/* ANIMATION */
-
-@keyframes fadeLogo{
-
-0%{
-opacity:0;
-transform:scale(.85);
+/* --- Master Interface Overlay Frame --- */
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0c0c0e;
+    /* Uses a deep black mask layered directly over your native stone backdrop asset */
+    background-image: linear-gradient(to bottom, rgba(12, 12, 14, 0.95), rgba(12, 12, 14, 0.97)), url('vindex-bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
 }
 
-30%{
-opacity:1;
-transform:scale(1);
+.splash-content {
+    width: 100%;
+    max-width: 380px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-80%{
-opacity:1;
+/* --- Stage 1: Volumetric Blue Backlight & Centered Scale Engine --- */
+.backlight-aura-source {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Creates a dense, intense neon blue light burst centered directly behind the crest logo */
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.6) 0%, rgba(0, 229, 255, 0.2) 50%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(15px);
+    z-index: 1;
+    pointer-events: none;
 }
 
-100%{
-opacity:0;
+.crest-vector-container {
+    position: relative;
+    width: 240px; /* Expands footprint significantly on mobile device views */
+    height: 240px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 229, 255, 0.4);
+    /* Pulls your high-res sword/laurel wreath crest directly as a centered background mask layer */
+    background-image: url('icon-512.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #0c0c0e;
+    z-index: 2;
+    transform-origin: center center;
 }
 
+.zoom-animation {
+    animation: centerExplosionZoom 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* MENU */
-
-.menu{
-
-width:85%;
-max-width:400px;
-
+@keyframes centerExplosionZoom {
+    0% {
+        transform: scale(0.0);
+        opacity: 0;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    }
+    12% {
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.06); /* Dynamic pop limit just before settling */
+        box-shadow: 0 0 50px rgba(0, 229, 255, 0.5);
+    }
+    100% {
+        transform: scale(1.0);
+        opacity: 1;
+        box-shadow: 0 0 35px rgba(0, 229, 255, 0.35);
+    }
 }
 
-/* CARDS */
-
-.card{
-
-background:#111827;
-
-padding:35px;
-
-margin:20px;
-
-border-radius:24px;
-
-font-size:26px;
-
-text-align:center;
-
-border:1px solid #1e293b;
-
-transition:.3s;
-
+.splash-loading-text {
+    color: #00e5ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 32px;
+    text-align: center;
+    z-index: 2;
 }
 
-.card:hover{
+/* --- Stage 2: Clean System Initializing Typography --- */
+.start-title {
+    color: #ff3333;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-align: center;
+}
 
-transform:translateY(-5px);
+.start-status {
+    color: #71717a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-border-color:#3b82f6;
+.system-manifest-box {
+    width: 100%;
+    background-color: #121214;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 30px;
+}
 
+.manifest-line {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.btn-start-engage {
+    width: 100%;
+    background-color: #ff3333;
+    border: none;
+    color: #ffffff;
+    padding: 16px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+}
+
+.btn-start-engage:hover {
+    background-color: #cc2222;
+}
+
+/* --- Stage 3: Side-by-Side Pathway Selector --- */
+.pathway-grid {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.btn-pathway {
+    flex: 1;
+    background-color: #121214;
+    border: 2px solid #ff3333;
+    color: #ff3333;
+    padding: 24px 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-pathway:hover {
+    background-color: #ff3333;
+    color: #ffffff;
+}
+
+/* --- Main Workspace UI Frame --- */
+.terminal-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #121214;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+}
+
+.terminal-header {
+    border-bottom: 1px solid #27272a;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo-fallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #27272a;
+}
+
+.title-meta h1 {
+    font-size: 1rem;
+    color: #ff3333;
+}
+
+.sub-indicator {
+    font-size: 0.65rem;
+    color: #71717a;
+}
+
+.log-row {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 8px;
+}
+
+.log-outcome {
+    color: #ff3333;
+    margin-left: auto;
 }
