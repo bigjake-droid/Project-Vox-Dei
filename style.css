@@ -1,75 +1,171 @@
 body{
+
   margin:0;
-  background:#05070d;
+
+  background:#04070d;
+
   color:white;
+
   font-family:Arial;
+
   overflow:hidden;
+
 }
 
+/* SCREENS */
+
 .screen{
+
+  position:absolute;
+
   width:100vw;
   height:100vh;
 
   display:flex;
+
   justify-content:center;
   align-items:center;
+
   flex-direction:column;
 
-  position:absolute;
+  transition:1.5s ease;
+
 }
 
+/* HIDDEN */
+
 .hidden{
+
   opacity:0;
+
   pointer-events:none;
+
+}
+
+/* SPLASH */
+
+#splashScreen{
+
+  background:
+  radial-gradient(circle,
+  #0f172a 0%,
+  #020617 100%);
+
 }
 
 .logo{
+
   width:180px;
 
   opacity:0;
 
-  animation:fade 5s forwards;
+  animation:fadeSequence 5s forwards;
+
 }
 
-h1{
+.mainTitle{
+
+  margin-top:20px;
+
+  letter-spacing:8px;
+
+  font-size:2rem;
+
   opacity:0;
-  animation:fade 5s forwards;
+
+  animation:fadeSequence 5s forwards;
+
 }
 
-@keyframes fade{
+/* ANIMATION */
+
+@keyframes fadeSequence{
 
   0%{
+
     opacity:0;
+    transform:scale(.8);
+
   }
 
   30%{
+
     opacity:1;
+    transform:scale(1);
+
   }
 
   80%{
+
     opacity:1;
+
   }
 
   100%{
+
     opacity:0;
+
   }
 
 }
 
-.card{
+/* INITIATE */
 
-  background:#111827;
+#initiateScreen{
 
-  padding:30px;
+  background:
+  linear-gradient(
+  to bottom,
+  #020617,
+  #111827);
 
-  margin:15px;
+}
 
-  border-radius:20px;
+.menuBox{
 
-  width:220px;
+  width:90%;
+  max-width:450px;
+
+}
+
+.initiateText{
 
   text-align:center;
 
-  font-size:24px;
+  margin-bottom:40px;
+
+  letter-spacing:10px;
+
+}
+
+/* CARDS */
+
+.card{
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid rgba(255,255,255,.1);
+
+  padding:30px;
+
+  border-radius:20px;
+
+  margin-bottom:20px;
+
+  text-align:center;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+.card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:#3b82f6;
 
 }
