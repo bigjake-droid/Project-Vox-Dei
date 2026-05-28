@@ -1,41 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Vindex</title>
+    
+    <meta name="theme-color" content="#0c0c0e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<div id="splashScreen">
+    <div id="app-splash" class="splash-overlay">
+        <div class="splash-content">
+            
+            <div id="stage-loading" class="splash-stage stage-centered">
+                <div class="backlight-aura-source"></div>
+                <div class="crest-vector-container zoom-animation"></div>
+                <div class="splash-loading-text">INITIALIZING CORE LAYER...</div>
+            </div>
 
-  <img src="icon-512.jpg"
-       class="logo">
+            <div id="stage-initiate" class="splash-stage hidden-view">
+                <h1 class="start-title">PROJECT VINDEX</h1>
+                <div class="start-status">SECURE SYSTEM PORTAL // PROTECTED RECORD</div>
+                
+                <div class="system-manifest-box">
+                    <div class="manifest-line">// PARALEGAL_DATABASE_CONNECTED</div>
+                    <div class="manifest-line">// NCIC_FRAUD_PROTOCOL_VERIFIED</div>
+                    <div class="manifest-line">// DISMISSAL_MOTION_GENERATOR_READY</div>
+                </div>
 
-  <h1 class="mainTitle">
+                <button id="btn-trigger-initiate" class="btn-start-engage">ENTER OPERATOR CONSOLE</button>
+            </div>
 
-    PROJECT-VOX-DEI
+            <div id="stage-classification" class="splash-stage hidden-view">
+                <div class="pathway-grid">
+                    <button class="btn-pathway btn-entity" data-profile="Individual">INDIVIDUAL OPERATOR</button>
+                    <button class="btn-pathway btn-entity" data-profile="Corporation">CORPORATE ENTITY</button>
+                </div>
+            </div>
 
-  </h1>
-
-</div>
-
-<div id="initiateScreen"
-     class="hidden">
-
-  <div class="menu">
-
-    <div class="card"
-         onclick="enterApp('Individual')">
-
-      Individual
-
+        </div>
     </div>
 
-    <div class="card"
-         onclick="enterApp('Corporation')">
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <div class="brand-block">
+                <div class="header-logo-fallback"></div>
+                <div class="title-meta">
+                    <h1>PROJECT VINDEX</h1>
+                    <span class="sub-indicator" id="console-sub">// CONSOLE_SECURE_INITIALIZED</span>
+                </div>
+            </div>
+        </header>
 
-      Corporation
-
+        <main class="terminal-body">
+            <div class="log-row">
+                <span class="log-id">[LOG_004] ></span>
+                <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
+                <span class="log-outcome">DISMISSED_WITH_PREJUDICE</span>
+            </div>
+        </main>
     </div>
 
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
+</html>
