@@ -1,34 +1,27 @@
 body{
 
-  margin:0;
-
-  background:#04070d;
-
-  color:white;
-
-  font-family:Arial;
-
-  overflow:hidden;
+margin:0;
+background:#020617;
+overflow:hidden;
+font-family:Arial;
+color:white;
 
 }
 
 /* SCREENS */
 
-.screen{
+#splashScreen,
+#initiateScreen{
 
-  position:absolute;
+position:absolute;
 
-  width:100vw;
-  height:100vh;
+width:100vw;
+height:100vh;
 
-  display:flex;
-
-  justify-content:center;
-  align-items:center;
-
-  flex-direction:column;
-
-  transition:1.5s ease;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 
 }
 
@@ -36,105 +29,67 @@ body{
 
 .hidden{
 
-  opacity:0;
-
-  pointer-events:none;
+opacity:0;
+pointer-events:none;
 
 }
 
 /* SPLASH */
 
-#splashScreen{
-
-  background:
-  radial-gradient(circle,
-  #0f172a 0%,
-  #020617 100%);
-
-}
-
 .logo{
 
-  width:180px;
+width:220px;
 
-  opacity:0;
+opacity:0;
 
-  animation:fadeSequence 5s forwards;
+animation:fadeLogo 5s forwards;
 
 }
 
 .mainTitle{
 
-  margin-top:20px;
+margin-top:25px;
 
-  letter-spacing:8px;
+font-size:2rem;
 
-  font-size:2rem;
+letter-spacing:8px;
 
-  opacity:0;
+opacity:0;
 
-  animation:fadeSequence 5s forwards;
+animation:fadeLogo 5s forwards;
 
 }
 
 /* ANIMATION */
 
-@keyframes fadeSequence{
+@keyframes fadeLogo{
 
-  0%{
+0%{
+opacity:0;
+transform:scale(.85);
+}
 
-    opacity:0;
-    transform:scale(.8);
+30%{
+opacity:1;
+transform:scale(1);
+}
 
-  }
+80%{
+opacity:1;
+}
 
-  30%{
-
-    opacity:1;
-    transform:scale(1);
-
-  }
-
-  80%{
-
-    opacity:1;
-
-  }
-
-  100%{
-
-    opacity:0;
-
-  }
+100%{
+opacity:0;
+}
 
 }
 
-/* INITIATE */
+/* MENU */
 
-#initiateScreen{
+.menu{
 
-  background:
-  linear-gradient(
-  to bottom,
-  #020617,
-  #111827);
-
-}
-
-.menuBox{
-
-  width:90%;
-  max-width:450px;
-
-}
-
-.initiateText{
-
-  text-align:center;
-
-  margin-bottom:40px;
-
-  letter-spacing:10px;
+width:85%;
+max-width:400px;
 
 }
 
@@ -142,30 +97,28 @@ body{
 
 .card{
 
-  background:
-  rgba(255,255,255,.05);
+background:#111827;
 
-  border:
-  1px solid rgba(255,255,255,.1);
+padding:35px;
 
-  padding:30px;
+margin:20px;
 
-  border-radius:20px;
+border-radius:24px;
 
-  margin-bottom:20px;
+font-size:26px;
 
-  text-align:center;
+text-align:center;
 
-  cursor:pointer;
+border:1px solid #1e293b;
 
-  transition:.3s;
+transition:.3s;
 
 }
 
 .card:hover{
 
-  transform:translateY(-5px);
+transform:translateY(-5px);
 
-  border-color:#3b82f6;
+border-color:#3b82f6;
 
 }
