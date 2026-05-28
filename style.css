@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Programmatic Splash Screen Elements --- */
+/* --- Programmatic Splash Screen Architecture --- */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -31,10 +31,9 @@ body {
     z-index: 99999;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+    transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1), visibility 3s ease;
 }
 
-/* Triggered by JS to run the clean exit fade out */
 .splash-overlay.clear-sequence {
     opacity: 0;
     visibility: hidden;
@@ -46,59 +45,135 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 320px;
+    width: 100%;
+    max-width: 300px;
     padding: 20px;
-    animation: splashIntro 1.2s ease-out forwards;
 }
 
 .splash-crest {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
-    margin-bottom: 25px;
+    box-shadow: 0 0 35px rgba(0, 229, 255, 0.15);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    margin-bottom: 30px;
 }
 
-.splash-loading-text {
+/* Stage Functional Elements */
+.splash-stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: stageShift 0.4s ease-out forwards;
+}
+
+.hidden-view {
+    display: none !important;
+}
+
+.stage-title {
     color: #00E5FF;
     font-size: 0.75rem;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
-    margin-bottom: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
 }
 
-/* Animated Loading Line Meter */
+/* Hardened Input Form Controls */
+.terminal-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal-input {
+    width: 100%;
+    background-color: #0b0f17;
+    border: 1px solid #1a202c;
+    color: #e2e8f0;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.terminal-input:focus {
+    outline: none;
+    border-color: #00E5FF;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.1);
+}
+
+/* Action Triggers */
+.btn-terminal {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #00E5FF;
+    color: #00E5FF;
+    padding: 14px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.4);
+}
+
+.btn-terminal:hover {
+    background-color: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+#auth-toggle-mode {
+    font-size: 0.6rem;
+    color: #4a5568;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#auth-toggle-mode:hover {
+    color: #00E5FF;
+}
+
+/* Animated Progress Tracker */
+.splash-loading-text {
+    color: #00E5FF;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
 .loading-bar-container {
-    width: 180px;
+    width: 100%;
     height: 2px;
     background-color: #1a202c;
-    border-radius: 1px;
-    overflow: hidden;
 }
 
 .loading-bar-progress {
     width: 100%;
     height: 100%;
     background-color: #00E5FF;
-    box-shadow: 0 0 8px #00E5FF;
     transform: translateX(-100%);
     animation: loadTrack 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Animations Profiles */
-@keyframes splashIntro {
-    0% { opacity: 0; transform: scale(0.94); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
 @keyframes loadTrack {
     0% { transform: translateX(-100%); }
-    50% { transform: translateX(-30%); }
     100% { transform: translateX(0%); }
 }
 
-/* --- Terminal Workspace Controls --- */
+@keyframes stageShift {
+    0% { opacity: 0; transform: translateY(5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Main Dashboard Container Styles --- */
 .terminal-container {
     width: 100%;
     max-width: 480px;
@@ -185,11 +260,6 @@ body {
     border-radius: 6px;
     padding: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.log-row:hover {
-    border-color: #00E5FF;
 }
 
 .log-summary {
@@ -205,15 +275,10 @@ body {
 .log-divider { color: #2d3748; }
 .log-target { color: #cbd5e0; font-weight: bold; }
 
-.log-outcome {
-    color: #a0aec0;
-    margin-left: auto;
-}
-
 .status-clear {
     color: #00E5FF;
     font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+    margin-left: auto;
 }
 
 .log-details {
@@ -234,7 +299,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 4px;
 }
 
 .tag {
@@ -242,7 +306,6 @@ body {
     color: #718096;
     padding: 3px 6px;
     border-radius: 3px;
-    font-size: 0.6rem;
 }
 
 .btn-decrypt {
@@ -255,12 +318,6 @@ body {
     font-weight: bold;
     font-size: 0.7rem;
     margin-top: 8px;
-    transition: all 0.2s ease;
-}
-
-.btn-decrypt:hover {
-    background-color: rgba(0, 229, 255, 0.1);
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
 .archived-log {
