@@ -1,11 +1,18 @@
-// SPLASH TRANSITION
+// WAIT FOR PAGE LOAD
+
 window.onload = () => {
 
+  // SPLASH SCREEN TIMER
+
   setTimeout(() => {
+
+    // HIDE SPLASH
 
     document
       .getElementById("splashScreen")
       .classList.add("hidden");
+
+    // SHOW INITIATE SCREEN
 
     document
       .getElementById("initiateScreen")
@@ -16,16 +23,19 @@ window.onload = () => {
 };
 
 // ENTER APP
-function enterApp(type) {
 
-  localStorage.setItem("caseforge_mode", type);
+function enterApp(type){
 
-  alert(
-    `Entering ${type.toUpperCase()} mode`
+  localStorage.setItem(
+    "caseforgeMode",
+    type
   );
 
-  // Future:
-  // Redirect to dashboard
+  alert(
+    "Entering " + type + " Mode"
+  );
+
+  // FUTURE:
   // window.location.href = "dashboard.html";
 
 }
