@@ -1,71 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Vindex</title>
-    
-    <meta name="theme-color" content="#0c0c0e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaseForge</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <div id="app-splash" class="splash-overlay">
-        <div class="splash-content">
-            
-            <div id="stage-loading" class="splash-stage">
-                <div class="crest-backlight-wrapper">
-                    <img src="icon-512.jpg" alt="Vindex Crest" class="splash-crest zoom-animation">
-                </div>
-                <div class="splash-loading-text">LOADING SYSTEM ARCHITECTURE...</div>
-            </div>
+  <!-- SPLASH SCREEN -->
+  <div id="splashScreen" class="screen active">
+    <img src="icon-512.jpg" class="logo" alt="Logo">
+    <h1 class="title">CASEFORGE</h1>
+  </div>
 
-            <div id="stage-initiate" class="splash-stage hidden-view">
-                <h1 class="start-title">PROJECT VINDEX</h1>
-                <div class="start-status">SECURE CORE INTERFACE // INTERNAL USE ONLY</div>
-                
-                <div class="system-manifest-box">
-                    <div class="manifest-line">// SECURE_SUBSYSTEMS_ONBOARDED</div>
-                    <div class="manifest-line">// PARALEGAL_DATABASE_CONNECTED</div>
-                    <div class="manifest-line">// DISMISSAL_PROTOCOL_VERIFIED</div>
-                </div>
+  <!-- INITIATE SCREEN -->
+  <div id="initiateScreen" class="screen hidden">
 
-                <button id="btn-trigger-initiate" class="btn-start-engage">ENTER COMMAND CONSOLE</button>
-            </div>
+    <div class="initiate-container">
 
-            <div id="stage-classification" class="splash-stage hidden-view">
-                <div class="pathway-grid">
-                    <button class="btn-pathway btn-entity" data-profile="Individual">INDIVIDUAL OPERATOR</button>
-                    <button class="btn-pathway btn-entity" data-profile="Corporation">CORPORATE ENTITY</button>
-                </div>
-            </div>
+      <h1 class="init-title">INITIATE</h1>
 
-        </div>
+      <div class="choice-card" onclick="enterApp('individual')">
+        <h2>Individual</h2>
+        <p>
+          Personal case management, evidence tracking,
+          timelines, and legal organization.
+        </p>
+      </div>
+
+      <div class="choice-card" onclick="enterApp('corporation')">
+        <h2>Corporation</h2>
+        <p>
+          Enterprise documentation, compliance records,
+          investigations, and operational intelligence.
+        </p>
+      </div>
+
     </div>
 
-    <div class="terminal-container">
-        <header class="terminal-header">
-            <div class="brand-block">
-                <img src="icon-192.jpg" alt="Vindex Emblem" class="header-logo">
-                <div class="title-meta">
-                    <h1>PROJECT-VOX-DEI</h1>
-                    <span class="sub-indicator" id="console-sub">// SYSTEM_CONSOLE_ONLINE</span>
-                </div>
-            </div>
-        </header>
+  </div>
 
-        <main class="terminal-body">
-            <div class="log-row">
-                <span class="log-id">[LOG_004] ></span>
-                <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
-                <span class="log-outcome">DISMISSED_WITH_PREJUDICE</span>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
