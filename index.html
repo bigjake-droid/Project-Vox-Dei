@@ -1,77 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>CaseForge</title>
-
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- SPLASH SCREEN -->
-  <div id="splashScreen" class="screen">
+<div id="splashScreen" class="screen">
 
-    <div class="splash-content">
+  <img src="icon-512.jpg" class="logo">
 
-      <img src="icon-512.jpg"
-           alt="CaseForge Logo"
-           class="logo">
+  <h1>CASEFORGE</h1>
 
-      <h1 class="logo-title">
-        CASEFORGE
-      </h1>
+</div>
 
-    </div>
+<div id="initiateScreen" class="screen hidden">
 
-  </div>
+  <div class="card"
+       onclick="enterApp('Individual')">
 
-  <!-- INITIATE SCREEN -->
-  <div id="initiateScreen"
-       class="screen hidden">
-
-    <div class="initiate-wrapper">
-
-      <h1 class="initiate-title">
-        INITIATE
-      </h1>
-
-      <div class="option-card"
-           onclick="enterApp('Individual')">
-
-        <h2>Individual</h2>
-
-        <p>
-          Personal case management,
-          evidence organization,
-          timelines, and records.
-        </p>
-
-      </div>
-
-      <div class="option-card"
-           onclick="enterApp('Corporation')">
-
-        <h2>Corporation</h2>
-
-        <p>
-          Enterprise investigations,
-          compliance systems,
-          intelligence operations,
-          and legal archives.
-        </p>
-
-      </div>
-
-    </div>
+    Individual
 
   </div>
 
-  <script src="script.js"></script>
+  <div class="card"
+       onclick="enterApp('Corporation')">
+
+    Corporation
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
