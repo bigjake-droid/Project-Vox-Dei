@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function runSystemLoadSequence() {
-    // Stage 1: Keep the centered backlight logo expanding for exactly 5000ms
     setTimeout(() => {
         const loadingStage = document.getElementById('stage-loading');
         const initiateStage = document.getElementById('stage-initiate');
@@ -12,7 +11,6 @@ function runSystemLoadSequence() {
         if (loadingStage) loadingStage.classList.add('hidden-view');
         if (initiateStage) initiateStage.classList.remove('hidden-view');
         
-        // Stage 2: Advance to side-by-side selection grid upon activation
         if (engageButton) {
             engageButton.addEventListener('click', () => {
                 transitionStage('stage-initiate', 'stage-classification');
@@ -30,7 +28,6 @@ function initializePathwayTriggers() {
             const profile = btn.getAttribute('data-profile');
             console.log(`PATHWAY ENGAGED // OPERATOR PROFILE: ${profile.toUpperCase()}`);
             
-            // Clean dismissal of onboarding panels to expose dashboard command node
             const masterSplash = document.getElementById('app-splash');
             const dashboardSub = document.getElementById('console-sub');
             
