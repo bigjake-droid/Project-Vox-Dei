@@ -8,24 +8,34 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000000">
 
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/jpeg" sizes="192x192" href="icon-192.jpg">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Vox-Dei">
 
     <link rel="apple-touch-startup-image" href="icon-512.jpg">
-    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.jpg">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div id="app-splash" class="splash-overlay">
+        <div class="splash-content">
+            <img src="icon-512.jpg" alt="Vindex Silentium Tyrannis" class="splash-crest">
+            <div class="splash-loading-text">INITIALIZING VINDEX PROTOCOL...</div>
+            <div class="loading-bar-container">
+                <div class="loading-bar-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="terminal-container">
         
         <header class="terminal-header">
             <div class="brand-block">
-                <img src="icon-192.png" alt="Vindex Emblem" class="header-logo">
+                <img src="icon-192.jpg" alt="Vindex Emblem" class="header-logo">
                 <div class="title-meta">
                     <h1>PROJECT-VOX-DEI</h1>
                     <span class="sub-indicator">// SYSTEM_OVERRIDE_LOG</span>
