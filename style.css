@@ -25,8 +25,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #0c0c0e;
-    /* Clean backdrop blend with flat mask layers */
-    background-image: linear-gradient(rgba(12, 12, 14, 0.96), rgba(12, 12, 14, 0.98)), url('vindex-bg.png');
+    background-image: linear-gradient(to bottom, rgba(12, 12, 14, 0.96), rgba(12, 12, 14, 0.98)), url('vindex-bg.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -44,7 +43,7 @@ body {
     align-items: center;
 }
 
-/* 5s Zoom Mechanics - Clean & Matte (No Neon Cyber Glows) */
+/* 5s Zoom Mechanics - Clean & Matte */
 .splash-crest {
     width: 180px;
     height: 180px;
@@ -53,7 +52,7 @@ body {
 }
 
 .zoom-animation {
-    animation: simpleZoom 5.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: simpleZoom 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes simpleZoom {
@@ -73,7 +72,7 @@ body {
 
 /* --- Screen 2: Initializing Layout --- */
 .start-title {
-    color: #ff3333; /* Clean solid crimson structural tint */
+    color: #ff3333;
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: 1px;
