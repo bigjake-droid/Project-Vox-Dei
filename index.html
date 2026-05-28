@@ -3,53 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project-Vox-Dei: Pro Se Guidebook</title>
-
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000">
-
-    <link rel="icon" type="image/jpeg" sizes="192x192" href="icon-192.jpg">
-
+    <title>Project Vindex: Operator Portal</title>
+    
+    <meta name="theme-color" content="#0c0c0e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Vox-Dei">
-
-    <link rel="apple-touch-startup-image" href="icon-512.jpg">
-    <link rel="apple-touch-icon" href="icon-192.jpg">
-
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="app-splash" class="splash-overlay">
         <div class="splash-content">
-            <img src="icon-512.jpg" alt="Vindex Silentium Tyrannis" class="splash-crest">
             
             <div id="stage-loading" class="splash-stage">
-                <div class="splash-loading-text">INITIALIZING VINDEX PROTOCOL...</div>
-                <div class="loading-bar-container">
-                    <div class="loading-bar-progress"></div>
-                </div>
+                <img src="icon-512.jpg" alt="Vindex Crest" class="splash-crest zoom-animation">
+                <div class="splash-loading-text">LOADING SYSTEM ARCHITECTURE...</div>
             </div>
 
             <div id="stage-initiate" class="splash-stage hidden-view">
-                <button id="btn-trigger-initiate" class="btn-terminal">[ INITIATE SYSTEM ]</button>
+                <h1 class="start-title">PROJECT VINDEX</h1>
+                <div class="start-status">SECURE CORE INTERFACE // INTERNAL USE ONLY</div>
+                
+                <div class="system-manifest-box">
+                    <div class="manifest-line">// SECURE_SUBSYSTEMS_ONBOARDED</div>
+                    <div class="manifest-line">// PARALEGAL_DATABASE_CONNECTED</div>
+                    <div class="manifest-line">// DISMISSAL_PROTOCOL_VERIFIED</div>
+                </div>
+
+                <button id="btn-trigger-initiate" class="btn-start-engage">ENTER COMMAND CONSOLE</button>
             </div>
 
             <div id="stage-classification" class="splash-stage hidden-view">
-                <div class="stage-title">// ASSIGN CLASSIFICATION PROFILE</div>
-                <button class="btn-terminal btn-entity" data-profile="Individual">[ INDIVIDUAL OPERATOR ]</button>
-                <button class="btn-terminal btn-entity" data-profile="Corporation">[ CORPORATE ENTITY ]</button>
-            </div>
-
-            <div id="stage-auth" class="splash-stage hidden-view">
-                <div id="auth-node-title" class="stage-title">// SECURE ACCESS NODE</div>
-                <form id="auth-form" class="terminal-form">
-                    <input type="email" id="operator-email" placeholder="OPERATOR_EMAIL" required class="terminal-input">
-                    <input type="password" id="operator-pass" placeholder="SECURITY_PASSPHRASE" required class="terminal-input">
-                    <button type="submit" class="btn-terminal" style="margin-top: 15px;">[ ENGAGE KEY ]</button>
-                </form>
-                <div id="auth-toggle-mode">// FIRST TIME? INITIALIZE PROTOCOL SETUP</div>
+                <div class="pathway-grid">
+                    <button class="btn-pathway btn-entity" data-profile="Individual">INDIVIDUAL OPERATOR</button>
+                    <button class="btn-pathway btn-entity" data-profile="Corporation">CORPORATE ENTITY</button>
+                </div>
             </div>
 
         </div>
@@ -61,54 +50,16 @@
                 <img src="icon-192.jpg" alt="Vindex Emblem" class="header-logo">
                 <div class="title-meta">
                     <h1>PROJECT-VOX-DEI</h1>
-                    <span class="sub-indicator" id="console-sub">// SYSTEM_OVERRIDE_LOG</span>
+                    <span class="sub-indicator" id="console-sub">// SYSTEM_CONSOLE_ONLINE</span>
                 </div>
-            </div>
-            <div class="counter-block">
-                <span class="counter-label">TOTAL_BREACHES:</span>
-                <span class="counter-value" id="breachCounter">0004</span>
             </div>
         </header>
 
-        <div class="tenets-bar">
-            <span class="tenet">// INTEGRITY</span>
-            <span class="tenet">// COURAGE</span>
-            <span class="tenet">// COMMITMENT</span>
-        </div>
-
-        <main class="terminal-body" id="logConsole">
-            
-            <div class="log-row active-override">
-                <div class="log-summary">
-                    <span class="log-id">[LOG_004] ></span>
-                    <span class="log-timestamp">2026.05.28</span>
-                    <span class="log-divider">//</span>
-                    <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
-                    <span class="log-outcome status-clear">DISMISSED_WITH_PREJUDICE</span>
-                </div>
-                
-                <div class="log-details">
-                    <p><strong>JURISDICTION:</strong> CO_8TH_DISTRICT_COURT // DIV_4A</p>
-                    <p><strong>ENGAGEMENT TYPE:</strong> PRO_SE_COUNTER-OFFENSIVE</p>
-                    <div class="exploit-tags">
-                        <span class="tag">[NCIC_FRAUD_EXPOSED]</span>
-                        <span class="tag">[AI_BRADY_BYPASS]</span>
-                        <span class="tag">[SPOLIATION_LOCKED_IN]</span>
-                    </div>
-                    <button class="btn-decrypt" onclick="downloadCredential('VX-004')">
-                        [EXTRACT_MOTIONS_DECRYPTED]
-                    </button>
-                </div>
-            </div>
-
-            <div class="log-row archived-log">
-                <div class="log-summary">
-                    <span class="log-id">[LOG_003] ></span>
-                    <span class="log-timestamp">2026.04.12</span>
-                    <span class="log-divider">//</span>
-                    <span class="log-target">TARGET: MUNICIPAL_REGISTRY</span>
-                    <span class="log-outcome">OVERRIDE_SUCCESSFUL</span>
-                </div>
+        <main class="terminal-body">
+            <div class="log-row">
+                <span class="log-id">[LOG_004] ></span>
+                <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
+                <span class="log-outcome">DISMISSED_WITH_PREJUDICE</span>
             </div>
         </main>
     </div>
