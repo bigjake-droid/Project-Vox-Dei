@@ -1,16 +1,12 @@
 {
-  "short_name": "Vox-Dei",
-  "name": "Project-Vox-Dei: Pro Se Guidebook",
-  "start_url": "index.html",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "short_name": "Vindex",
+  "name": "Project Vindex: Operator Portal",
   "icons": [
     {
       "src": "icon-192.jpg",
       "type": "image/jpeg",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.jpg",
@@ -18,5 +14,10 @@
       "sizes": "512x512",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "start_url": "index.html",
+  "background_color": "#0c0c0e",
+  "theme_color": "#0c0c0e",
+  "display": "standalone",
+  "orientation": "portrait"
 }
