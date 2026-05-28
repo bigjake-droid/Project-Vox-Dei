@@ -3,15 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function runSystemLoadSequence() {
-    // Hold Stage 1 for exactly 5000ms to allow the flat emblem zoom animation to complete
+    // Stage 1: Display the automated zoom crest overlay for exactly 5000ms
     setTimeout(() => {
-        document.getElementById('stage-loading').classList.add('hidden-view');
-        document.getElementById('stage-initiate').classList.remove('hidden-view');
+        const loadingStage = document.getElementById('stage-loading');
+        const initiateStage = document.getElementById('stage-initiate');
+        const engageButton = document.getElementById('btn-trigger-initiate');
+
+        if (loadingStage) loadingStage.classList.add('hidden-view');
+        if (initiateStage) initiateStage.classList.remove('hidden-view');
         
-        // Advance from Screen 2 to Screen 3 (Side-by-Side Blocks)
-        document.getElementById('btn-trigger-initiate').addEventListener('click', () => {
-            transitionStage('stage-initiate', 'stage-classification');
-        });
+        // Stage 2: Hand off click event control cleanly to Stage 3
+        if (engageButton) {
+            engageButton.addEventListener('click', () => {
+                transitionStage('stage-initiate', 'stage-classification');
+            });
+        }
         
         initializePathwayTriggers();
     }, 5000);
@@ -22,16 +28,24 @@ function initializePathwayTriggers() {
     pathwayButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const profile = btn.getAttribute('data-profile');
-            console.log(`PATHWAY SELECTED // INTERFACE MODE: ${profile.toUpperCase()}`);
+            console.log(`PATHWAY ENGAGED // DETECTED PROFILE: ${profile.toUpperCase()}`);
             
-            // Unmask the main application frame completely
-            document.getElementById('app-splash').style.display = 'none';
-            document.getElementById('console-sub').innerText = `// SYSTEM_CONSOLE_ONLINE // OPERATOR: ${profile.toUpperCase()}`;
+            // Core Action: Terminate onboarding layer visibility completely
+            const masterSplash = document.getElementById('app-splash');
+            const dashboardSub = document.getElementById('console-sub');
+            
+            if (masterSplash) masterSplash.style.display = 'none';
+            if (dashboardSub) {
+                dashboardSub.innerText = `// SYSTEM_CONSOLE_ONLINE // OPERATOR: ${profile.toUpperCase()}`;
+            }
         });
     });
 }
 
 function transitionStage(currentStageId, nextStageId) {
-    document.getElementById(currentStageId).classList.add('hidden-view');
-    document.getElementById(nextStageId).classList.remove('hidden-view');
+    const current = document.getElementById(currentStageId);
+    const next = document.getElementById(nextStageId);
+    
+    if (current) current.classList.add('hidden-view');
+    if (next) next.classList.remove('hidden-view');
 }
