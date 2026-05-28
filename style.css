@@ -1,32 +1,21 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
 body{
+  margin:0;
   background:#05070d;
-  overflow:hidden;
   color:white;
+  font-family:Arial;
+  overflow:hidden;
 }
-
-/* SCREEN SYSTEM */
 
 .screen{
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  width:100%;
+  width:100vw;
   height:100vh;
 
   display:flex;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
 
-  transition:opacity 1.5s ease;
+  position:absolute;
 }
 
 .hidden{
@@ -34,53 +23,27 @@ body{
   pointer-events:none;
 }
 
-/* SPLASH SCREEN */
-
-#splashScreen{
-
-  background:
-  radial-gradient(circle at center,
-  #111827 0%,
-  #05070d 100%);
-
-}
-
-.splash-content{
-  text-align:center;
-}
-
 .logo{
-
   width:180px;
 
   opacity:0;
 
-  animation:fadeSequence 5s ease forwards;
+  animation:fade 5s forwards;
 }
 
-.logo-title{
-
-  margin-top:20px;
-
-  font-size:2.5rem;
-
-  letter-spacing:10px;
-
+h1{
   opacity:0;
-
-  animation:fadeSequence 5s ease forwards;
+  animation:fade 5s forwards;
 }
 
-@keyframes fadeSequence{
+@keyframes fade{
 
   0%{
     opacity:0;
-    transform:scale(.8);
   }
 
   30%{
     opacity:1;
-    transform:scale(1);
   }
 
   80%{
@@ -93,78 +56,20 @@ body{
 
 }
 
-/* INITIATE SCREEN */
+.card{
 
-#initiateScreen{
+  background:#111827;
 
-  background:
-  linear-gradient(to bottom,
-  #05070d,
-  #0f172a);
+  padding:30px;
 
-}
-
-.initiate-wrapper{
-
-  width:90%;
-  max-width:500px;
-
-}
-
-.initiate-title{
-
-  text-align:center;
-
-  margin-bottom:40px;
-
-  letter-spacing:8px;
-
-  font-size:2.8rem;
-
-}
-
-.option-card{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.1);
+  margin:15px;
 
   border-radius:20px;
 
-  padding:25px;
+  width:220px;
 
-  margin-bottom:20px;
+  text-align:center;
 
-  cursor:pointer;
-
-  transition:.3s ease;
-
-  backdrop-filter:blur(10px);
-
-}
-
-.option-card:hover{
-
-  transform:translateY(-5px);
-
-  border-color:#3b82f6;
-
-  background:rgba(255,255,255,.08);
-
-}
-
-.option-card h2{
-
-  color:#60a5fa;
-
-  margin-bottom:10px;
-
-}
-
-.option-card p{
-
-  color:#cbd5e1;
-
-  line-height:1.5;
+  font-size:24px;
 
 }
