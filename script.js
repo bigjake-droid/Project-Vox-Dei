@@ -1,28 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
     initializeConsole();
+    initializeSplashSequence();
 });
+
+// Controls the fade out execution timeline
+function initializeSplashSequence() {
+    const splashOverlay = document.getElementById('app-splash');
+    
+    if (splashOverlay) {
+        // Matches the 2.2s execution timer of the CSS loading bar progress animation
+        setTimeout(() => {
+            splashOverlay.classList.add('clear-sequence');
+            
+            // Fully remove interactivity hazards after fade closes
+            setTimeout(() => {
+                splashOverlay.style.display = 'none';
+                console.log("PROJECT-VOX-DEI // SPLASH_SCREEN_DISMANTLED");
+            }, 800); // 800ms matching transition window in CSS
+            
+        }, 2500); 
+    }
+}
 
 function initializeConsole() {
     const logRows = document.querySelectorAll('.log-row');
 
-    // Handle interactive expandable rows for mobile viewports
+    // Drawer toggles for rows
     logRows.forEach(row => {
         row.addEventListener('click', (e) => {
-            // Prevent close toggle if user clicks the action button inside the drawer
             if (e.target.classList.contains('btn-decrypt')) return;
-
-            // Toggle active expansion state
             row.classList.toggle('expanded');
         });
     });
 
-    console.log("PROJECT-VOX-DEI // CORE_SYSTEM_READY");
+    console.log("PROJECT-VOX-DEI // SYSTEM_CONSOLE_ONLINE");
 }
 
-// Vindex Family Clearance Generation System
+// Verification Hook Placeholder
 function downloadCredential(operatorId) {
-    alert(`ACCESS GRANTED // INITIALIZING DECRYPTION PROTOCOL FOR OPERATOR ${operatorId}\n\nPreparing secure Vindex Operational Order download packet...`);
-    
-    // Future expansion hook: integration with canvas or PDF generator goes here
+    alert(`ACCESS GRANTED // INITIALIZING DECRYPTION PROTOCOL FOR OPERATOR ${operatorId}\n\nCompiling Vindex Operational Order and generating secure verification hash token...`);
     console.log(`Payload deployment sequence initialized for target token: ${operatorId}`);
 }
