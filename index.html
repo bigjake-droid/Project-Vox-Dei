@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>CaseForge</title>
 
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- SPLASH SCREEN -->
-  <div id="splashScreen" class="screen active">
-    <img src="icon-512.jpg" class="logo" alt="Logo">
-    <h1 class="title">CASEFORGE</h1>
+  <div id="splashScreen" class="screen">
+
+    <img src="icon-512.jpg" class="logo">
+
+    <h1 class="title">
+      CASEFORGE
+    </h1>
+
   </div>
 
   <!-- INITIATE SCREEN -->
@@ -22,22 +28,22 @@
 
     <div class="initiate-container">
 
-      <h1 class="init-title">INITIATE</h1>
+      <h1 class="init-title">
+        INITIATE
+      </h1>
 
-      <div class="choice-card" onclick="enterApp('individual')">
+      <div class="choice-card"
+           onclick="enterApp('individual')">
+
         <h2>Individual</h2>
-        <p>
-          Personal case management, evidence tracking,
-          timelines, and legal organization.
-        </p>
+
       </div>
 
-      <div class="choice-card" onclick="enterApp('corporation')">
+      <div class="choice-card"
+           onclick="enterApp('corporation')">
+
         <h2>Corporation</h2>
-        <p>
-          Enterprise documentation, compliance records,
-          investigations, and operational intelligence.
-        </p>
+
       </div>
 
     </div>
@@ -45,5 +51,6 @@
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
