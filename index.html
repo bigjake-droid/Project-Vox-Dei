@@ -1,118 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-Vox-Dei: Pro Se Guidebook</title>
 
-  <title>Project Vox Dei</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
 
-  <link rel="stylesheet" href="style.css?v=1" />
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#05070b" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Vox-Dei">
+
+    <link rel="apple-touch-startup-image" href="icon-512.jpg">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <main id="app">
+    <div class="terminal-container">
+        
+        <header class="terminal-header">
+            <div class="brand-block">
+                <img src="icon-192.png" alt="Vindex Emblem" class="header-logo">
+                <div class="title-meta">
+                    <h1>PROJECT-VOX-DEI</h1>
+                    <span class="sub-indicator">// SYSTEM_OVERRIDE_LOG</span>
+                </div>
+            </div>
+            <div class="counter-block">
+                <span class="counter-label">TOTAL_BREACHES:</span>
+                <span class="counter-value" id="breachCounter">0004</span>
+            </div>
+        </header>
 
-    <section id="dashboard" class="screen active">
-      <div class="hero">
-        <div class="sigil">⚔</div>
-        <h1>PROJECT VINDEX</h1>
-        <p>VOX DEI</p>
-      </div>
+        <div class="tenets-bar">
+            <span class="tenet">// INTEGRITY</span>
+            <span class="tenet">// COURAGE</span>
+            <span class="tenet">// COMMITMENT</span>
+        </div>
 
-      <div class="card-grid">
+        <main class="terminal-body" id="logConsole">
+            
+            <div class="log-row active-override">
+                <div class="log-summary">
+                    <span class="log-id">[LOG_004] ></span>
+                    <span class="log-timestamp">2026.05.28</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-outcome status-clear">DISMISSED_WITH_PREJUDICE</span>
+                </div>
+                
+                <div class="log-details">
+                    <p><strong>JURISDICTION:</strong> CO_8TH_DISTRICT_COURT // DIV_4A</p>
+                    <p><strong>ENGAGEMENT TYPE:</strong> PRO_SE_COUNTER-OFFENSIVE</p>
+                    <div class="exploit-tags">
+                        <span class="tag">[NCIC_FRAUD_EXPOSED]</span>
+                        <span class="tag">[AI_BRADY_BYPASS]</span>
+                        <span class="tag">[SPOLIATION_LOCKED_IN]</span>
+                    </div>
+                    <button class="btn-decrypt" onclick="downloadCredential('VX-004')">
+                        [EXTRACT_MOTIONS_DECRYPTED]
+                    </button>
+                </div>
+            </div>
 
-        <button class="dash-card" onclick="openScreen('guidebook')">
-          <div class="emoji">📖</div>
-          <h2>Pro Se<br>Guidebook</h2>
-          <p>Doctrine. Discipline. Record control.</p>
-          <span>→</span>
-        </button>
+            <div class="log-row archived-log">
+                <div class="log-summary">
+                    <span class="log-id">[LOG_003] ></span>
+                    <span class="log-timestamp">2026.04.12</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-target">TARGET: MUNICIPAL_REGISTRY</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-outcome">OVERRIDE_SUCCESSFUL</span>
+                </div>
+            </div>
 
-        <button class="dash-card" onclick="openScreen('evidence')">
-          <div class="emoji">🔒</div>
-          <h2>Evidence<br>Organizer</h2>
-          <p>Index proof. Tag doctrine. Build leverage.</p>
-          <span>→</span>
-        </button>
+            <div class="log-row archived-log">
+                <div class="log-summary">
+                    <span class="log-id">[LOG_002] ></span>
+                    <span class="log-timestamp">2026.03.11</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-target">TARGET: CIRSA_INS_HOLD</span>
+                    <span class="log-divider">//</span>
+                    <span class="log-outcome">BOND_LIABILITY_ESTABLISHED</span>
+                </div>
+            </div>
 
-        <button class="dash-card" onclick="openScreen('timeline')">
-          <div class="emoji">⏳</div>
-          <h2>Case<br>Timeline</h2>
-          <p>Every event matters.</p>
-          <span>→</span>
-        </button>
+        </main>
+    </div>
 
-        <button class="dash-card" onclick="openScreen('export')">
-          <div class="emoji">📜</div>
-          <h2>Export<br>Dossier</h2>
-          <p>Build. Export. Defend.</p>
-          <span>→</span>
-        </button>
-
-      </div>
-    </section>
-
-    <section id="guidebook" class="screen page">
-      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
-      <h1>Pro Se Guidebook</h1>
-
-      <div class="panel">
-        <h2>Rule One</h2>
-        <p>Do not argue from memory. Argue from records.</p>
-      </div>
-
-      <div class="panel">
-        <h2>Rule Two</h2>
-        <p>Timeline first. Argument second. Emotion last.</p>
-      </div>
-
-      <div class="panel">
-        <h2>Rule Three</h2>
-        <p>Every exhibit must explain what it proves and why it matters.</p>
-      </div>
-    </section>
-
-    <section id="evidence" class="screen page">
-      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
-      <h1>Evidence Organizer</h1>
-
-      <div class="form-box">
-        <input id="evidenceTitle" type="text" placeholder="Evidence title" />
-        <input id="evidenceTag" type="text" placeholder="Tag / issue / element" />
-        <textarea id="evidenceNotes" placeholder="What does this prove?"></textarea>
-        <button onclick="addEvidence()">Add Evidence</button>
-      </div>
-
-      <div id="evidenceList" class="list"></div>
-    </section>
-
-    <section id="timeline" class="screen page">
-      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
-      <h1>Case Timeline</h1>
-
-      <div class="form-box">
-        <input id="eventDate" type="text" placeholder="Date / time" />
-        <input id="eventTitle" type="text" placeholder="Event title" />
-        <textarea id="eventNotes" placeholder="Event details"></textarea>
-        <button onclick="addTimelineEvent()">Add Event</button>
-      </div>
-
-      <div id="timelineList" class="list"></div>
-    </section>
-
-    <section id="export" class="screen page">
-      <button class="back-btn" onclick="openScreen('dashboard')">← Back</button>
-      <h1>Export Dossier</h1>
-
-      <button onclick="generateDossier()">Generate Dossier</button>
-      <textarea id="dossierOutput" readonly placeholder="Generated dossier will appear here..."></textarea>
-    </section>
-
-  </main>
-
-  <script src="script.js?v=1"></script>
+    <script src="script.js"></script>
 </body>
 </html>
