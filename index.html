@@ -24,21 +24,44 @@
     <div id="app-splash" class="splash-overlay">
         <div class="splash-content">
             <img src="icon-512.jpg" alt="Vindex Silentium Tyrannis" class="splash-crest">
-            <div class="splash-loading-text">INITIALIZING VINDEX PROTOCOL...</div>
-            <div class="loading-bar-container">
-                <div class="loading-bar-progress"></div>
+            
+            <div id="stage-loading" class="splash-stage">
+                <div class="splash-loading-text">INITIALIZING VINDEX PROTOCOL...</div>
+                <div class="loading-bar-container">
+                    <div class="loading-bar-progress"></div>
+                </div>
             </div>
+
+            <div id="stage-initiate" class="splash-stage hidden-view">
+                <button id="btn-trigger-initiate" class="btn-terminal">[ INITIATE SYSTEM ]</button>
+            </div>
+
+            <div id="stage-classification" class="splash-stage hidden-view">
+                <div class="stage-title">// ASSIGN CLASSIFICATION PROFILE</div>
+                <button class="btn-terminal btn-entity" data-profile="Individual">[ INDIVIDUAL OPERATOR ]</button>
+                <button class="btn-terminal btn-entity" data-profile="Corporation">[ CORPORATE ENTITY ]</button>
+            </div>
+
+            <div id="stage-auth" class="splash-stage hidden-view">
+                <div id="auth-node-title" class="stage-title">// SECURE ACCESS NODE</div>
+                <form id="auth-form" class="terminal-form">
+                    <input type="email" id="operator-email" placeholder="OPERATOR_EMAIL" required class="terminal-input">
+                    <input type="password" id="operator-pass" placeholder="SECURITY_PASSPHRASE" required class="terminal-input">
+                    <button type="submit" class="btn-terminal" style="margin-top: 15px;">[ ENGAGE KEY ]</button>
+                </form>
+                <div id="auth-toggle-mode">// FIRST TIME? INITIALIZE PROTOCOL SETUP</div>
+            </div>
+
         </div>
     </div>
 
     <div class="terminal-container">
-        
         <header class="terminal-header">
             <div class="brand-block">
                 <img src="icon-192.jpg" alt="Vindex Emblem" class="header-logo">
                 <div class="title-meta">
                     <h1>PROJECT-VOX-DEI</h1>
-                    <span class="sub-indicator">// SYSTEM_OVERRIDE_LOG</span>
+                    <span class="sub-indicator" id="console-sub">// SYSTEM_OVERRIDE_LOG</span>
                 </div>
             </div>
             <div class="counter-block">
@@ -54,14 +77,12 @@
         </div>
 
         <main class="terminal-body" id="logConsole">
-            
             <div class="log-row active-override">
                 <div class="log-summary">
                     <span class="log-id">[LOG_004] ></span>
                     <span class="log-timestamp">2026.05.28</span>
                     <span class="log-divider">//</span>
                     <span class="log-target">TARGET: LARIMER_COUNTY_DA</span>
-                    <span class="log-divider">//</span>
                     <span class="log-outcome status-clear">DISMISSED_WITH_PREJUDICE</span>
                 </div>
                 
@@ -85,22 +106,9 @@
                     <span class="log-timestamp">2026.04.12</span>
                     <span class="log-divider">//</span>
                     <span class="log-target">TARGET: MUNICIPAL_REGISTRY</span>
-                    <span class="log-divider">//</span>
                     <span class="log-outcome">OVERRIDE_SUCCESSFUL</span>
                 </div>
             </div>
-
-            <div class="log-row archived-log">
-                <div class="log-summary">
-                    <span class="log-id">[LOG_002] ></span>
-                    <span class="log-timestamp">2026.03.11</span>
-                    <span class="log-divider">//</span>
-                    <span class="log-target">TARGET: CIRSA_INS_HOLD</span>
-                    <span class="log-divider">//</span>
-                    <span class="log-outcome">BOND_LIABILITY_ESTABLISHED</span>
-                </div>
-            </div>
-
         </main>
     </div>
 
