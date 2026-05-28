@@ -10,7 +10,7 @@
     justify-content: center;
     position: relative;
     height: 100%;
-    min-height: 280px;
+    min-height: 320px;
 }
 
 .hidden-view {
@@ -44,7 +44,6 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #0c0c0e;
-    /* Uses a deep black mask layered directly over your native stone backdrop asset */
     background-image: linear-gradient(to bottom, rgba(12, 12, 14, 0.95), rgba(12, 12, 14, 0.97)), url('vindex-bg.png');
     background-size: cover;
     background-position: center;
@@ -64,27 +63,27 @@ body {
     justify-content: center;
 }
 
-/* --- Stage 1: Volumetric Blue Backlight & Centered Scale Engine --- */
+/* --- Stage 1: Volumetric Deep Blue Backlight & Centered Scale Engine --- */
 .backlight-aura-source {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    /* Creates a dense, intense neon blue light burst centered directly behind the crest logo */
-    background: radial-gradient(circle, rgba(0, 229, 255, 0.6) 0%, rgba(0, 229, 255, 0.2) 50%, rgba(0, 0, 0, 0) 70%);
-    filter: blur(15px);
+    /* CHANGED: Swapped teal gradient for a pure, rich tactical electric blue aura */
+    background: radial-gradient(circle, rgba(0, 85, 255, 0.65) 0%, rgba(0, 85, 255, 0.15) 55%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(20px);
     z-index: 1;
     pointer-events: none;
 }
 
 .crest-vector-container {
     position: relative;
-    width: 240px; /* Expands footprint significantly on mobile device views */
-    height: 240px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 229, 255, 0.4);
-    /* Pulls your high-res sword/laurel wreath crest directly as a centered background mask layer */
-    background-image: url('icon-512.jpg');
+    /* CHANGED: Border updated to vibrant electric blue with clean alpha matching */
+    border: 2px solid rgba(0, 85, 255, 0.4);
+    background-image: url('file_00000000c2c871fd83c938429ddfc540.png');
     background-size: cover;
     background-position: center;
     background-color: #0c0c0e;
@@ -100,33 +99,35 @@ body {
     0% {
         transform: scale(0.0);
         opacity: 0;
-        box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+        box-shadow: 0 0 20px rgba(0, 85, 255, 0.2);
     }
     12% {
         opacity: 1;
     }
     75% {
-        transform: scale(1.06); /* Dynamic pop limit just before settling */
-        box-shadow: 0 0 50px rgba(0, 229, 255, 0.5);
+        transform: scale(1.06);
+        box-shadow: 0 0 60px rgba(0, 85, 255, 0.55);
     }
     100% {
         transform: scale(1.0);
         opacity: 1;
-        box-shadow: 0 0 35px rgba(0, 229, 255, 0.35);
+        box-shadow: 0 0 40px rgba(0, 85, 255, 0.4);
     }
 }
 
 .splash-loading-text {
-    color: #00e5ff;
+    /* CHANGED: Hardened text tint to match the tactical blue initialization sequence */
+    color: #0055ff;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2px;
     margin-top: 32px;
     text-align: center;
     z-index: 2;
+    text-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
 }
 
-/* --- Stage 2: Clean System Initializing Typography --- */
+/* --- Stage 2: System Initializing Typography --- */
 .start-title {
     color: #ff3333;
     font-size: 2.2rem;
@@ -229,11 +230,10 @@ body {
     gap: 12px;
 }
 
-.header-logo-fallback {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #27272a;
+.header-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
 }
 
 .title-meta h1 {
